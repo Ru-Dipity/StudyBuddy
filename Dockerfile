@@ -19,7 +19,7 @@ RUN python -m venv /opt/venv
 ENV PATH="/opt/venv/bin:$PATH"
 
 # Leverage Docker cache: copy dependency manifest first
-COPY setup.py .
+COPY setup.py requirements.txt ./
 
 # Install dependencies into virtual environment
 RUN pip install --no-cache-dir --upgrade pip && \
